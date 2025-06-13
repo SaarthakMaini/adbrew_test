@@ -37,6 +37,15 @@ class TodoListView(APIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    def delete(self, request, todo_id):
+        try:
+            result = todos_collection.delete_one({'_id': ObjectId(todo_id)})
+            if result.deleted_count == 0:
+                return Response({'error': 'Todo not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'message': 'Todo deleted successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 def health(request):
     """Health check endpoint"""
     return JsonResponse({"status": "healthy"})

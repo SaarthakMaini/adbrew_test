@@ -37,47 +37,85 @@
   }
 }
 
-.app {
-  max-width: 800px;
-  margin: 0 auto;
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
 }
 
-h1 {
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
+  color: #4a90e2;
+  margin-bottom: 20px;
 }
 
-.todo-form {
-  margin-bottom: 30px;
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-control {
-  width: 100%;
+.input {
+  flex: 1;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
+  transition: border-color 0.3s;
 }
 
-.submit-button {
-  background-color: #4CAF50;
+.input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.button {
+  background-color: #4a90e2;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-.submit-button:disabled {
+.button:hover {
+  background-color: #357abd;
+}
+
+.button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.listItem:hover {
+  background-color: #f5f5f5;
 }
 
 .error-message {
@@ -117,4 +155,24 @@ h1 {
   text-align: center;
   color: #666;
   padding: 20px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-button:disabled {
+  background-color: #e4606d;
+  cursor: not-allowed;
 }
